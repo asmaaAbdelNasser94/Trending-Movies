@@ -13,7 +13,7 @@ declare var $:any;
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  public loader = NgxLoader;
+  public loader = NgxLoader; // ngx-http-loader
   error :BehaviorSubject<string> = new BehaviorSubject<string>('');
   clicked : boolean = false;
   isLogin : BehaviorSubject<boolean> = new BehaviorSubject(false);
