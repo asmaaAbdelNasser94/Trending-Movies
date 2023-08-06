@@ -1,0 +1,26 @@
+.bg-query{
+  background-color: #041c32 !important;
+}
+.bg-noQuery{
+  background-color: #041c32ca !important;
+}
+.modal-dialog{
+  min-width: 100%;
+}
+
+.search-box{
+  width: 100%;
+  // display: none;
+  // position: absolute;
+  // top : 0;
+  // bottom: 0;
+  // right: 0;
+  // left: 0;
+  // z-index: 9999;
+  input{
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}
+

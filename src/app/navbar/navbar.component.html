@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+    <a class="navbar-brand fs-4" routerLink="Home">
+      <i class="fa-brands fa-gripfire fa-flip fa-xl" style="color: white"></i>
+      Trending Movies</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+        <li *ngIf="isLogin" class="nav-item" >
+          <a class="nav-link single" routerLink="Home" routerLinkActive="active" aria-current="page">Home<span class="visually-hidden">(current)</span></a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link single" routerLink="About" routerLinkActive="active">About</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link single" routerLink="Movies" routerLinkActive="active">Movies</a>
+        </li>
+        <li *ngIf="isLogin" class="nav-item">
+          <a class="nav-link full-text single" routerLink="Tv" routerLinkActive="active">Tv Shows</a>
+          <a class="nav-link short-text single" routerLink="Tv" routerLinkActive="active">Tv</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="isLogin" class="collapse navbar-collapse search" id="collapsibleNavId">
+      <a class="nav-link d-flex align-items-center ms-auto"
+      data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa fa-search fs-4 me-2"></i>
+        <span> Search</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse " id="collapsibleNavId">
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0 d-flex align-items-center">
+        <button (click)="changeLang('en')"
+         class="btn btn-outline-info fs-12 rounded-circle p-2 mb-2 mb-lg-0 me-lg-2">EN</button>
+        <button (click)="changeLang('ar')"
+         class="btn btn-outline-info rounded-circle fs-12 p-2 mb-2 mb-lg-0 me-lg-3">AR</button>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/asmaa-abd-el-nasser-3a81461bb/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/asmaaAbdelNasser94" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+
+      </ul>
+      <ul class="navbar-nav mt-2 mt-lg-0 ms-lg-3">
+        <li *ngIf="!isLogin" class="nav-item">
+          <a class="nav-link single" routerLinkActive="active" routerLink="Register">Register</a>
+        </li>
+        <li *ngIf="!isLogin" class="nav-item">
+          <a class="nav-link single" routerLinkActive="active" routerLink="Login">Login</a>
+        </li>
+
+
+        <div *ngIf="isLogin" class="btn-group align-items-center">
+          <div><li class="nav-item"><a class="single nav-link" routerLink="Settings" routerLinkActive="active">Settings</a></li></div>
+          <div class="dropdown-toggle dropdown-toggle-split fs-5  mt-2" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/Settings/Profile">Profile</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/Settings/Password">Password</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/Settings/Notifications">Notifications</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLinkActive="active" routerLink="/Settings/Privacy">Privacy</a></li>
+          </ul>
+        </div>
+
+        <li (click)="logOut()" *ngIf="isLogin" class="nav-item">
+          <a class="nav-link single" routerLink="Logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Button trigger modal -->
+</nav>

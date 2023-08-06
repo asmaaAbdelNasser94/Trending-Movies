@@ -1,0 +1,48 @@
+.movieDetailes {
+  position: relative;
+  background-position: left calc((50vw - 170px) - 340px) top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 52.5, 0.84) 50%, rgba(31.5, 31.5, 52.5, 0.84) 100%);
+  }
+
+  .movie-box {
+    position: relative;
+    z-index: 2;
+
+    .movie-img {
+      width: 300px;
+      height: 450px;
+
+    }
+
+    .movie-desc {
+
+      h2 a {
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        &:hover {
+          color: #0cdaf0;
+        }
+      }
+    }
+  }
+
+}
+
+@media (width > 991px) {
+  .movie-container {
+    height: calc(100vh - 62px);
+  }
+}

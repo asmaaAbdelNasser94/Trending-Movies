@@ -1,0 +1,28 @@
+.fs-14{
+  font-size: 14px;
+}
+.line{
+  height: 4px;
+  margin: 10px 0;
+  background-image: linear-gradient(to right, #d16ba5, #ae5e9d, #8b5291, #694783, #473b72, #39467e, #265187, #005b8d, #0082b0, #00aacc, #16d2e2, #5ffbf1);
+}
+.line2{
+  height: 4px;
+  width: 50%;
+  margin: 10px 0;
+  background-image: linear-gradient(to right, #d16ba5, #ae5e9d, #8b5291, #694783, #473b72, #39467e, #265187, #005b8d, #0082b0, #00aacc, #16d2e2, #5ffbf1);
+}
+.movie-box{
+ transition: all 0.8s;
+ -webkit-transition: all 0.8s;
+ -moz-transition: all 0.8s;
+ -ms-transition: all 0.8s;
+ -o-transition: all 0.8s;
+ &:hover{
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+}

@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,200;0,400;0,700;1,200;1,400&display=swap');
+body , html , app-root{
+  height: 100%;
+}
+body{
+  background-color: #051526;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+.fs-14{
+  font-size: 14px;
+}
+.fs-12{
+  font-size: 12px;
+}
+
+

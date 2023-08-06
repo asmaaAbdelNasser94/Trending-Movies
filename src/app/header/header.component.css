@@ -1,0 +1,62 @@
+.hero {
+  background-image: url(../../assets/imgs/pexels-pixabay-458379.jpg);
+  background-position: 85%;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-image: linear-gradient(to right, #041C32 calc(50vw - 170px - 340px), rgba(11, 52, 91, 0.7647058824) 50%, rgba(32, 32, 53, 0.84) 100%);
+}
+
+.row-full {
+  height: calc(100vh - 62px);
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+
+.new {
+  padding: 5px 5px;
+}
+
+a img {
+  cursor: pointer;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+  z-index: 2;
+}
+.shine:hover::before, .shine:focus::before {
+  animation: shine 1s;
+  -webkit-animation: shine 1s;
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}/*# sourceMappingURL=header.component.css.map */

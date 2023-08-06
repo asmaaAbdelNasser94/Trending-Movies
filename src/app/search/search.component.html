@@ -1,0 +1,45 @@
+<div [class]="query ? 'bg-query' : 'bg-noQuery'"
+class="modal h-100 fade"
+id="exampleModal"
+ tabindex="-1"
+ aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+<div class="modal-dialog m-0">
+    <div class="modal-content bg-transparent">
+          <div class="container">
+            <div class="pt-4 text-end">
+              <button class="btn btn-light" type="button" data-bs-dismiss="modal" aria-label="Close">
+                <i class="fa fa-close text-muted"></i>
+              </button>
+            </div>
+          <div class="modal-header border-0">
+            <div class="search-box pt-5">
+              <div class="bg-white w-75 mx-auto d-flex align-items-center px-3 py-2 rounded">
+                <input (keyup)="searchProcess(query)" [(ngModel)]="query"
+                type="email" class="form-control p-0 border-0"
+                  id="exampleFormControlInput1" placeholder="Search for a movie, tv show, person...">
+                <i class="fa fa-search text-muted"></i>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body mt-5">
+            <div class="row gy-5">
+              <div *ngFor="let result of searchResult"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              class="position-relative col-lg-2 col-md-4 col-6 d-flex flex-column justify-content-between"
+              data-aos="fade-up"
+              data-aos-duration="1500">
+              <a [routerLink]= "['/'+getMediaType(result.media_type) , result.id]">
+                <div class="text-center">
+                  <img class="img-fluid rounded shadow" [src]="imgSrc + (result.profile_path || result.poster_path)" alt="result Poster">
+                  <h3 class="mt-3 h6">{{result.title || result.name}}</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>

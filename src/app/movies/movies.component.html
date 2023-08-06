@@ -1,0 +1,52 @@
+  <div data-aos="zoom-out" data-aos-duration="1500">
+    <h2 class="mt-5">Trending Movies To Watch Right Now</h2>
+    <p class="text-muted mb-5">Trending Movies To Watch Right Now</p>
+    <div data-aos="fade-in" data-aos-duration="2500" class="line shadow"></div>
+  </div>
+
+
+<div class="row g-5 mt-2">
+  <div *ngFor="let movie of trendingMovies"
+   class="movie-box position-relative col-lg-2 col-md-4 col-6 d-flex flex-column justify-content-between"
+   data-aos="fade-in" data-aos-duration="1500">
+    <div class="position-absolute bg-info py-2 px-2 end-0 me-4 rounded-1">
+      {{movie.vote_average | number : '1.0-0'}}
+      <i class="bi bi-star-half"></i>
+    </div>
+    <a [routerLink]="['/movieDetails' , movie.id]">
+      <div class="text-center">
+        <img class="img-fluid rounded shadow" [src]="imgSrc + movie.poster_path" alt="Movie Poster">
+        <h3 class="mt-3 h6">{{movie.title || movie.name}}</h3>
+      </div>
+
+      <div class="movieDetailes text-center">
+        <p class="text-muted fs-14"> {{movie.overview | seeMore : 10}} <span class="text-info">..See More</span></p>
+          <p class="fst-italic text-muted">{{movie.release_date | date : 'd MMM y' || 'Unkown Date'}}</p>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="">
+  <nav class="mt-3" aria-label="Page navigation example"
+  data-aos="fade-in" data-aos-delay="500" data-aos-duration="2000">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a (click)="getPrePage()" class="page-link" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li *ngFor="let item of items; let i = index" [class.active]="i === activeItemIndex"
+      (click)="activeItemIndex = i"  (click)="getPageNumber($event)" (click)="getMovies()" class="page-item">
+        <a class="page-link">{{item}}</a>
+      </li>
+      <li class="page-item">
+        <a (click)="getNextPage()" class="page-link" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<ngx-http-loader [loader]="loader.MULTICIRCLE"[backdropBackgroundColor]="'#051523'"[iconColor]="'#0cdaf0'"[subTitle]="'Loading'"[subTitleColor]="'#0cdaf0'"[subTitleSize]="'40px'"></ngx-http-loader>

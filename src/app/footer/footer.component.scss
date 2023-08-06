@@ -1,0 +1,42 @@
+
+.footer{
+  position: relative;
+  height: 150px;
+  background-color: saddlebrown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../assets/imgs/insurance-footer-background.png);
+  background-position: center ;
+  background-size: cover;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-image: linear-gradient(to right, #020e19 calc((50vw - 170px) - 340px), #0b345bc3 50%, rgba(32, 32, 53, 0.936) 100%);
+}
+i{
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  color: white;
+  font-size: 24px;
+  margin: 0px 5px;
+  cursor: pointer;
+  &:hover
+{
+   color: #0cdaf0;
+   transform:translateY(-5px) ;
+   -webkit-transform:translateY(-5px) ;
+   -moz-transform:translateY(-5px) ;
+   -ms-transform:translateY(-5px) ;
+   -o-transform:translateY(-5px) ;
+}
+}

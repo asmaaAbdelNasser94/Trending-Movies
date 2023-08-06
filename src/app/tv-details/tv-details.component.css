@@ -1,0 +1,39 @@
+.tvDetails {
+  position: relative;
+  background-position: left calc(50vw - 170px - 340px) top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.tvDetails .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-image: linear-gradient(to right, rgb(32, 32, 53) calc(50vw - 170px - 340px), rgba(32, 32, 53, 0.84) 50%, rgba(32, 32, 53, 0.84) 100%);
+}
+.tvDetails .tv-box {
+  position: relative;
+  z-index: 2;
+}
+.tvDetails .tv-box .tv-img {
+  width: 300px;
+  height: 450px;
+}
+.tvDetails .tv-box .tv-desc h2 a {
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.tvDetails .tv-box .tv-desc h2 a:hover {
+  color: #0cdaf0;
+}
+
+@media (width > 991px) {
+  .tv-container {
+    height: calc(100vh - 62px);
+  }
+}/*# sourceMappingURL=tv-details.component.css.map */

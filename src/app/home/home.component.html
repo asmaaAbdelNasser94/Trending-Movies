@@ -1,0 +1,81 @@
+<app-header [trendingMovies]="trendingMovies"></app-header>
+<div class="container">
+  <div class="row g-5">
+    <div class="col-lg-4 d-flex align-items-center " data-aos="fade-right" data-aos-duration="1000">
+      <div>
+        <div class="line2 shadow"></div>
+        <h2 class="mt-5">Trending Movies To Watch Right Now</h2>
+        <p class="text-muted mb-5">Trending Movies To Watch Right Now</p>
+        <div class="line shadow"></div>
+      </div>
+    </div>
+    <div *ngFor="let movie of trendingMovies"
+      class="movie-box position-relative col-lg-2 col-md-4 col-6 d-flex flex-column justify-content-between"
+      data-aos="fade-up" data-aos-duration="1500">
+      <div class="position-absolute bg-info py-2 px-2 end-0 me-4 rounded-1">
+        {{movie.vote_average | number : '1.0-0'}}
+        <i class="bi bi-star-half"></i>
+      </div>
+      <a [routerLink]="['/movieDetails' , movie.id]">
+        <div class="text-center">
+          <img class="img-fluid rounded shadow" [src]="imgSrc + movie.poster_path" alt="Movie Poster">
+          <h3 class="mt-3 h6">{{movie.title || movie.name}}</h3>
+        </div>
+
+        <div class="movieDetailes text-center">
+          <p class="text-muted fs-14"> {{movie.overview | seeMore : 10}} <span class="text-info">..See More</span></p>
+          <p class="fst-italic text-muted">{{movie.release_date | date : 'd MMM y' || 'Unkown Date'}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row g-5 mt-5">
+    <div class="col-lg-4 d-flex align-items-center" data-aos="fade-right" data-aos-duration="1000">
+      <div>
+        <div class="line2 shadow"></div>
+        <h2 class="mt-5">Trending Tv Shows To Watch Right Now</h2>
+        <p class="text-muted mb-5">Trending Tv Shows To Watch Right Now</p>
+        <div class="line shadow"></div>
+      </div>
+    </div>
+
+    <div *ngFor="let tv of trendingTv"
+      class="movie-box position-relative col-lg-2 col-md-4 col-6 d-flex flex-column justify-content-between"
+      data-aos="fade-up" data-aos-duration="1500">
+      <div class="position-absolute bg-info py-2 px-2 end-0 me-4 rounded-1">
+        {{tv.vote_average | number : '1.0-0'}}
+        <i class="bi bi-star-half"></i>
+      </div>
+      <a [routerLink]="['/tvDetails' , tv.id]">
+        <div class="text-center">
+          <img class="img-fluid rounded shadow" [src]="imgSrc + tv.poster_path" alt="Movie Poster">
+          <h3 class="mt-3 h6">{{tv.title || tv.name}}</h3>
+        </div>
+        <div class="movieDetailes text-center">
+          <p class="text-muted"> {{tv.overview | seeMore : 10}} <span class="text-info">..See More</span></p>
+          <p class="fst-italic text-muted">{{tv.first_air_date | date : 'd MMM y' || 'Unkown Date'}}</p>
+
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row g-5 mt-5">
+    <div class="col-lg-4 d-flex align-items-center" data-aos="fade-right" data-aos-duration="1000">
+      <div>
+        <div class="line2 shadow"></div>
+        <h2 class="mt-5">Trending People To Watch Right Now</h2>
+        <p class="text-muted mb-5">Trending People To Watch Right Now</p>
+        <div class="line shadow"></div>
+      </div>
+    </div>
+    <div *ngFor="let person of trendingPerson" class="movie-box col-lg-2 col-md-4 col-6" data-aos="fade-up"
+      data-aos-duration="1500">
+
+      <img class="img-fluid rounded shadow" [src]="imgSrc + person.profile_path" alt="Movie Poster">
+      <div class="movieDetailes text-center">
+        <h3 class="mt-3 h5">{{person.title || person.name}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-http-loader [loader]="loader.MULTICIRCLE"[backdropBackgroundColor]="'#051523'"[iconColor]="'#0cdaf0'"[subTitle]="'Loading'"[subTitleColor]="'#0cdaf0'"[subTitleSize]="'40px'"></ngx-http-loader>

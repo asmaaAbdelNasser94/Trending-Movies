@@ -1,0 +1,12 @@
+.register-container {
+  height: 800px !important;
+}
+
+@media (max-width: 1200px) {
+  .registerForm {
+    width: 80% !important;
+  }
+}
+.toast-error {
+  background-color: saddlebrown !important;
+}/*# sourceMappingURL=register.component.css.map */

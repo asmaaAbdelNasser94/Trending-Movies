@@ -1,0 +1,35 @@
+<div class="tv-container mt-3 d-flex align-items-center">
+  <div data-aos="zoom-in" data-aos-duration="1000"  class="tvDetails rounded-3"
+  [ngStyle]="{'background-image': 'url('+ backgroundSrc + tvDetails.backdrop_path +')'}">
+  <div class="overlay rounded-3 "></div>
+  <div class="row tv-box overflow-scroll p-5">
+    <div class="col-lg-4 col-md-6 text-center">
+      <img data-aos="fade-down-right" data-aos-delay="500"  data-aos-duration="1500"  class="img-fluid tv-img rounded-3" [src]="imgSrc + tvDetails.poster_path" alt="">
+    </div>
+    <div data-aos="fade-down-left" data-aos-delay="500" data-aos-duration="1500" class="col-lg-8 col-md-6 p-5">
+      <div class="tv-desc">
+        <h2> <a [href]="tvDetails.homepage" target="_blank">{{tvDetails.name}}
+          <span class="text-muted">({{tvDetails.first_air_date|date : 'd MMM y'}})</span>
+          <i class="bi bi-arrow-up-right-square h6 ms-2 text-info"><small class="ms-2 ">Show More</small></i>
+        </a>
+      </h2>
+      <p>{{tvDetails.first_air_date | date : 'dd/MM/yyyy'}}
+
+        <span  *ngFor="let genres of tvDetails.genres ; let i=index"
+        class="bg-info p-1 fs-12 mx-1 rounded">{{genres.name}}
+        </span>
+
+      </p>
+      </div>
+      <p class="text-muted fst-italic mt-5">{{tvDetails.tagline}}</p>
+      <p class="mt-4">Overview</p>
+      <p>{{tvDetails.overview}}</p>
+      <p class="h4">{{tvDetails.vote_average | number : '1.1-1'}}
+        <i class="bi bi-star-half text-warning"></i>
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+<ngx-http-loader [loader]="loader.MULTICIRCLE"[backdropBackgroundColor]="'#051523'"[iconColor]="'#0cdaf0'"[subTitle]="'Loading'"[subTitleColor]="'#0cdaf0'"[subTitleSize]="'40px'"></ngx-http-loader>
+

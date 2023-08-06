@@ -1,0 +1,59 @@
+<div class="login-container d-flex align-items-center">
+  <div class="w-100 d-flex flex-column">
+    <div class="loginForm w-50 mx-auto py-5">
+      <div class="mb-5 text-center">
+        <h2 class=" text-center">{{ "LoginHeader"| translate}}</h2>
+        <p class="text-muted">{{"LoginSubHeader" | translate}}</p>
+      </div>
+      <div *ngIf="error.getValue()" class="alert alert-danger">
+        {{error.getValue()}}
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="getLoginData(loginForm)">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email :</label>
+          <input (focus)="errorDelete()" formControlName = 'email' type="email" class="form-control" id="email">
+        </div>
+        <div *ngIf="loginForm.get('email')?.errors !== null &&
+         loginForm.get('email')?.touched">
+          <div *ngIf="loginForm.get('email')?.errors?.['required']" class="alert alert-danger">
+            Email Field Is Required !
+          </div>
+          <div *ngIf="loginForm.get('email')?.errors?.['email']" class="alert alert-danger">
+            The Email Is Invaild .
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password :</label>
+          <input (focus)="errorDelete()" formControlName = 'password' type="password" class="form-control" id="password">
+        </div>
+        <div *ngIf="loginForm.get('password')?.errors !== null &&
+        loginForm.get('password')?.touched">
+          <div *ngIf="loginForm.get('password')?.errors?.['required']" class="alert alert-danger">
+            Password Field Is Required !
+          </div>
+          <div *ngIf="loginForm.get('password')?.errors?.['pattern']" class="alert alert-danger">
+            Password Must Be 5 Charachters .
+          </div>
+        </div>
+        <div class="text-center mt-5">
+
+          <button (click)="loginClicked()" [disabled]="loginForm.invalid && !isLogin.getValue()" class="btn btn-light px-3">
+          <div *ngIf="clicked && !error.getValue(); else no" class="d-flex justify-content-between align-items-center">
+            <span class="me-3">Loading</span>
+            <div class="dot-spin"></div>
+          </div>
+          <ng-template #no>
+            <span>{{"login" | translate}}</span>
+          </ng-template>
+
+        </button>
+      </div>
+      </form>
+    </div>
+    <p class="text-center">{{"don'tHaveAcc" | translate}}<a class="text-info ms-1" routerLink="/Register"> {{"signUp" | translate}}</a></p>
+  </div>
+</div>
+
+<ngx-http-loader [loader]="loader.MULTICIRCLE"[backdropBackgroundColor]="'#051523'"[iconColor]="'#0cdaf0'"[subTitle]="'Loading'"[subTitleColor]="'#0cdaf0'"[subTitleSize]="'40px'"></ngx-http-loader>
+
+

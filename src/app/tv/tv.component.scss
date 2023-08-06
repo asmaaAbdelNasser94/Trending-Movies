@@ -1,0 +1,61 @@
+.line{
+  height: 4px;
+  margin: 10px 0;
+  background-image: linear-gradient(to right, #d16ba5, #ae5e9d, #8b5291, #694783, #473b72, #39467e, #265187, #005b8d, #0082b0, #00aacc, #16d2e2, #5ffbf1);
+}
+.pagination{
+  li{
+    margin-right: 8px;
+  }
+  li a{
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #0DCAF0;
+    font-size: 18px;
+    color: white;
+    background-color: transparent;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    &:hover{
+      background: #0DCAF0;
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+}
+}
+}
+.active{
+  background-color: #0DCAF0;
+}
+
+.movie-box{
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  &:hover{
+   transform: translateY(-10px);
+   -webkit-transform: translateY(-10px);
+   -moz-transform: translateY(-10px);
+   -ms-transform: translateY(-10px);
+   -o-transform: translateY(-10px);
+ }
+ }
+ @media (width < 576px) {
+  .pagination li a{
+
+    padding: 4px 6px;
+  }
+
+}

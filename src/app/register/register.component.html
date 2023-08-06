@@ -1,0 +1,49 @@
+<div class="register-container d-flex align-items-center">
+  <div class="w-100 d-flex flex-column">
+  <div class=" registerForm w-50 mx-auto py-5">
+    <div class="mb-5 text-center">
+      <h2 class=" text-center">{{"registerHeader" | translate}}</h2>
+      <p class="text-muted">{{"registerSubHeader" | translate}}</p>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <form [formGroup]="registerForm" (ngSubmit)="submitRegister(registerForm)">
+      <div class="input-info">
+        <label for="email">Email :</label>
+        <input (focus)="errorDelete()" formControlName="email" class="form-control mt-2 mb-3" type="email">
+        <div *ngIf="registerForm.get('email')?.errors !== null &&
+      registerForm.get('email')?.touched" class="erorrs">
+          <div *ngIf="registerForm.get('email')?.errors?.['required']" class="alert alert-danger">
+            Email Field Is Required !
+          </div>
+          <div *ngIf="registerForm.get('email')?.errors?.['email']" class="alert alert-danger">
+            The Email Is Invaild .
+          </div>
+        </div>
+      </div>
+
+      <div class="input-info">
+        <label for="password">Password :</label>
+        <input (focus)="errorDelete()" formControlName="password" class="form-control mt-2 mb-3" type="password">
+        <div *ngIf="registerForm.get('password')?.errors !== null &&
+      registerForm.get('password')?.touched" class="erorrs">
+          <div *ngIf="registerForm.get('password')?.errors?.['required']" class="alert alert-danger">
+            Password Field Is Required !
+          </div>
+          <div *ngIf="registerForm.get('password')?.errors?.['pattern']" class="alert alert-danger">
+            Password Must Be 5 Charachters .
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <button [disabled]="registerForm.invalid" class="btn btn-light px-4">{{"register" | translate}}</button>
+      </div>
+    </form>
+    <ngx-http-loader [loader]="loader.MULTICIRCLE" [backdropBackgroundColor]="'#051523'" [iconColor]="'#0cdaf0'"
+      [subTitle]="'Loading'" [subTitleColor]="'#0cdaf0'" [subTitleSize]="'40px'">
+    </ngx-http-loader>
+  </div>
+  <p class="text-center">{{ "HaveAcc"| translate}}<a class="text-info ms-1" routerLink="/Login">{{"signIn" | translate}}</a></p>
+</div>
+</div>
+

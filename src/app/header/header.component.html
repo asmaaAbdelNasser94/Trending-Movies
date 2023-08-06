@@ -1,0 +1,24 @@
+  <header class="row-full mb-5 bg-danger hero d-flex align-items-end">
+    <div class="overlay"></div>
+      <div class="container pb-5">
+        <h1 class="text-white my-4 position-relative">Top Trending Media Right Now</h1>
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let movie of trendingMovies">
+            <ng-template carouselSlide [id]="movie.id">
+              <a [routerLink]="['/movieDetails' , movie.id]">
+                <div class="shine">
+                  <img class="rounded-4 p-2 shadow" [src]="imgSrc + movie.poster_path"
+                  [alt]="movie.alt" [title]="movie.title">
+                  <div class="position-absolute top-0 bg-info rounded-1 new">
+                    {{movie.vote_average | number : '1.0-0'}}
+                    <i class="bi bi-star-half"></i>
+                  </div>
+                </div>
+              </a>
+
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+  </header>
+

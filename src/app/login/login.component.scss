@@ -1,0 +1,14 @@
+@use 'three-dots' with(
+  $dot-width: 5px,
+  $dot-height: 5px,
+  $dot-color : #000000
+);
+.login-container{
+  height: 800px !important;
+
+}
+@media (max-width : 1200px ) {
+  .loginForm{
+    width: 80% !important;
+  }
+}

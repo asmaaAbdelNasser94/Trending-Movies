@@ -1,0 +1,19 @@
+.row-full{
+  width: 100vw;
+  height: 810px;
+  position: relative;
+  margin-left: -50vw;
+  // height: 100px;
+  // margin-top: 100px;
+  left: 50%;
+  background-color: white;
+ }
+.img-container{
+  width: 80%;
+}
+
+@media (max-width : 1200px){
+  .img-container{
+    width: 100%;
+  }
+}
