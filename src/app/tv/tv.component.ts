@@ -5,9 +5,10 @@ import { NgxLoader } from 'ngx-http-loader';
 declare var $ : any;
 
 @Component({
-  selector: 'app-tv',
-  templateUrl: './tv.component.html',
-  styleUrls: ['./tv.component.scss']
+    selector: 'app-tv',
+    templateUrl: './tv.component.html',
+    styleUrls: ['./tv.component.scss'],
+    standalone: false
 })
 export class TvComponent {
   public loader = NgxLoader;

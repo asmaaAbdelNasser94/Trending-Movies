@@ -3,9 +3,10 @@ import * as Aos from 'aos';
 import { NgxLoader } from 'ngx-http-loader';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+    selector: 'app-about',
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.scss'],
+    standalone: false
 })
 export class AboutComponent {
   public loader = NgxLoader;

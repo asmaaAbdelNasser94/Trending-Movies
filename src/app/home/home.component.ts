@@ -4,9 +4,10 @@ import { Component } from '@angular/core';
 import { NgxLoader } from 'ngx-http-loader';
 declare var $:any;
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent {
   public loader = NgxLoader;

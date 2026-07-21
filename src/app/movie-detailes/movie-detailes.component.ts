@@ -5,9 +5,10 @@ import { MoviesService } from '../movies.service';
 import * as Aos from 'aos';
 import { NgxLoader } from 'ngx-http-loader';
 @Component({
-  selector: 'app-movie-detailes',
-  templateUrl: './movie-detailes.component.html',
-  styleUrls: ['./movie-detailes.component.scss']
+    selector: 'app-movie-detailes',
+    templateUrl: './movie-detailes.component.html',
+    styleUrls: ['./movie-detailes.component.scss'],
+    standalone: false
 })
 export class MovieDetailesComponent implements OnInit {
   someSubscription: any;

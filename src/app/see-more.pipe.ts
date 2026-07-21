@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'seeMore'
+    name: 'seeMore',
+    standalone: false
 })
 export class SeeMorePipe implements PipeTransform {
 

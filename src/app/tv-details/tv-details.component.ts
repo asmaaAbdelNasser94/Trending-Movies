@@ -5,9 +5,10 @@ import * as Aos from 'aos';
 import { NgxLoader } from 'ngx-http-loader';
 
 @Component({
-  selector: 'app-tv-details',
-  templateUrl: './tv-details.component.html',
-  styleUrls: ['./tv-details.component.scss']
+    selector: 'app-tv-details',
+    templateUrl: './tv-details.component.html',
+    styleUrls: ['./tv-details.component.scss'],
+    standalone: false
 })
 export class TvDetailsComponent {
   public loader = NgxLoader;

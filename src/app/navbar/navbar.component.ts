@@ -3,9 +3,10 @@ import { AuthService } from './../auth.service';
 import { Component } from '@angular/core';
 declare var $:any;
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    standalone: false
 })
 export class NavbarComponent {
   isLogin: boolean = false;
