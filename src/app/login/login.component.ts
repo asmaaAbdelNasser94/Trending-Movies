@@ -20,7 +20,7 @@ export class LoginComponent {
   isLogin : BehaviorSubject<boolean> = new BehaviorSubject(false);
   loginForm : FormGroup = new FormGroup({
     email : new FormControl(null , [Validators.required , Validators.email]) ,
-    password : new FormControl(null , [Validators.required , Validators.pattern(`^[a-z | A-Z]{6}$`)])
+    password : new FormControl(null , [Validators.required , Validators.pattern(`^[a-z | A-Z | 0-9]{6}$`)])
   })
   constructor(public _AuthService : AuthService , public _Router :Router ,
     public translate : TranslateService ){}
