@@ -5,49 +5,64 @@
         <h2 class=" text-center">{{ "LoginHeader"| translate}}</h2>
         <p class="text-muted">{{"LoginSubHeader" | translate}}</p>
       </div>
-      <div *ngIf="error.getValue()" class="alert alert-danger">
-        {{error.getValue()}}
-      </div>
+      @if (error.getValue()) {
+        <div class="alert alert-danger">
+          {{error.getValue()}}
+        </div>
+      }
       <form [formGroup]="loginForm" (ngSubmit)="getLoginData(loginForm)">
         <div class="mb-3">
           <label for="email" class="form-label">Email :</label>
           <input (focus)="errorDelete()" formControlName = 'email' type="email" class="form-control" id="email">
         </div>
-        <div *ngIf="loginForm.get('email')?.errors !== null &&
-         loginForm.get('email')?.touched">
-          <div *ngIf="loginForm.get('email')?.errors?.['required']" class="alert alert-danger">
-            Email Field Is Required !
+        @if (loginForm.get('email')?.errors !== null &&
+          loginForm.get('email')?.touched) {
+          <div>
+            @if (loginForm.get('email')?.errors?.['required']) {
+              <div class="alert alert-danger">
+                Email Field Is Required !
+              </div>
+            }
+            @if (loginForm.get('email')?.errors?.['email']) {
+              <div class="alert alert-danger">
+                The Email Is Invaild .
+              </div>
+            }
           </div>
-          <div *ngIf="loginForm.get('email')?.errors?.['email']" class="alert alert-danger">
-            The Email Is Invaild .
-          </div>
-        </div>
+        }
         <div class="mb-3">
           <label for="password" class="form-label">Password :</label>
           <input (focus)="errorDelete()" formControlName = 'password' type="password" class="form-control" id="password">
         </div>
-        <div *ngIf="loginForm.get('password')?.errors !== null &&
-        loginForm.get('password')?.touched">
-          <div *ngIf="loginForm.get('password')?.errors?.['required']" class="alert alert-danger">
-            Password Field Is Required !
+        @if (loginForm.get('password')?.errors !== null &&
+          loginForm.get('password')?.touched) {
+          <div>
+            @if (loginForm.get('password')?.errors?.['required']) {
+              <div class="alert alert-danger">
+                Password Field Is Required !
+              </div>
+            }
+            @if (loginForm.get('password')?.errors?.['pattern']) {
+              <div class="alert alert-danger">
+                Password Must Be 5 Charachters .
+              </div>
+            }
           </div>
-          <div *ngIf="loginForm.get('password')?.errors?.['pattern']" class="alert alert-danger">
-            Password Must Be 5 Charachters .
-          </div>
-        </div>
+        }
         <div class="text-center mt-5">
 
           <button (click)="loginClicked()" [disabled]="loginForm.invalid && !isLogin.getValue()" class="btn btn-light px-3">
-          <div *ngIf="clicked && !error.getValue(); else no" class="d-flex justify-content-between align-items-center">
-            <span class="me-3">Loading</span>
-            <div class="dot-spin"></div>
-          </div>
-          <ng-template #no>
-            <span>{{"login" | translate}}</span>
-          </ng-template>
+            @if (clicked && !error.getValue()) {
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="me-3">Loading</span>
+                <div class="dot-spin"></div>
+              </div>
+            } @else {
+              <span>{{"login" | translate}}</span>
+            }
 
-        </button>
-      </div>
+          </button>
+        </div>
       </form>
     </div>
     <p class="text-center">{{"don'tHaveAcc" | translate}}<a class="text-info ms-1" routerLink="/Register"> {{"signUp" | translate}}</a></p>
