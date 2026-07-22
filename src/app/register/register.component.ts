@@ -21,7 +21,7 @@ export class RegisterComponent {
     // last_name : new FormControl(null , [Validators.required , Validators.maxLength(20) , Validators.minLength(5)]) ,
     email: new FormControl(null, [Validators.required, Validators.email]),
     // age : new FormControl(null , [  Validators.required , Validators.max(80) , Validators.min(18)]) ,
-    password: new FormControl(null, [Validators.required, Validators.pattern(`^[a-z | A-Z]{6}$`)]),
+    password: new FormControl(null, [Validators.required, Validators.pattern(`^[a-z | A-Z | 0-9]{8}$`)]),
     returnSecureToken: new FormControl(true)
   })
   constructor(public _AuthService: AuthService, public _Router: Router ,

@@ -3,30 +3,30 @@
     <div class=" registerForm w-50 mx-auto py-5">
       <div class="mb-5 text-center">
         <h2 class=" text-center">{{"registerHeader" | translate}}</h2>
-        <p class="text-muted">{{"registerSubHeader" | translate}}</p>
+        <p class="text-secondary">{{"registerSubHeader" | translate}}</p>
       </div>
 
       @if (error) {
-        <div class="alert alert-danger">{{error}}</div>
+      <div class="alert alert-danger">{{error}}</div>
       }
       <form [formGroup]="registerForm" (ngSubmit)="submitRegister(registerForm)">
         <div class="input-info">
           <label for="email">Email :</label>
           <input (focus)="errorDelete()" formControlName="email" class="form-control mt-2 mb-3" type="email">
           @if (registerForm.get('email')?.errors !== null &&
-            registerForm.get('email')?.touched) {
-            <div class="erorrs">
-              @if (registerForm.get('email')?.errors?.['required']) {
-                <div class="alert alert-danger">
-                  Email Field Is Required !
-                </div>
-              }
-              @if (registerForm.get('email')?.errors?.['email']) {
-                <div class="alert alert-danger">
-                  The Email Is Invaild .
-                </div>
-              }
+          registerForm.get('email')?.touched) {
+          <div class="erorrs">
+            @if (registerForm.get('email')?.errors?.['required']) {
+            <div class="alert alert-danger">
+              Email Field Is Required !
             </div>
+            }
+            @if (registerForm.get('email')?.errors?.['email']) {
+            <div class="alert alert-danger">
+              The Email Is Invaild .
+            </div>
+            }
+          </div>
           }
         </div>
 
@@ -34,19 +34,19 @@
           <label for="password">Password :</label>
           <input (focus)="errorDelete()" formControlName="password" class="form-control mt-2 mb-3" type="password">
           @if (registerForm.get('password')?.errors !== null &&
-            registerForm.get('password')?.touched) {
-            <div class="erorrs">
-              @if (registerForm.get('password')?.errors?.['required']) {
-                <div class="alert alert-danger">
-                  Password Field Is Required !
-                </div>
-              }
-              @if (registerForm.get('password')?.errors?.['pattern']) {
-                <div class="alert alert-danger">
-                  Password Must Be 5 Charachters .
-                </div>
-              }
+          registerForm.get('password')?.touched) {
+          <div class="erorrs">
+            @if (registerForm.get('password')?.errors?.['required']) {
+            <div class="alert alert-danger">
+              Password Field Is Required !
             </div>
+            }
+            @if (registerForm.get('password')?.errors?.['pattern']) {
+            <div class="alert alert-danger">
+              Password must be 8 chars with no special chars .
+            </div>
+            }
+          </div>
           }
         </div>
         <div class="text-center mt-5">
@@ -57,7 +57,7 @@
         [subTitle]="'Loading'" [subTitleColor]="'#0cdaf0'" [subTitleSize]="'40px'">
       </ngx-http-loader>
     </div>
-    <p class="text-center">{{ "HaveAcc"| translate}}<a class="text-info ms-1" routerLink="/Login">{{"signIn" | translate}}</a></p>
+    <p class="text-center">{{ "HaveAcc"| translate}}<a class="text-info ms-1" routerLink="/Login">{{"signIn" |
+        translate}}</a></p>
   </div>
 </div>
-
