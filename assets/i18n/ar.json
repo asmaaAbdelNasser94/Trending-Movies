@@ -1,0 +1,12 @@
+{
+  "LoginHeader" : "مرحبا بك مجددا!" ,
+  "LoginSubHeader" : "سجل دخولك و استمتع بأفضل العروض",
+  "don'tHaveAcc" : "لا تمتلك حساب؟" ,
+  "signUp" : "سجل الآن" ,
+  "registerHeader" : "إنشاء حساب جديد" ,
+  "registerSubHeader" : "سجل الآن و استمتع بعروض حصريه" ,
+  "HaveAcc" : "تمتلك حساب ؟ " ,
+  "signIn" : "سجل دخولك" ,
+  "register" : "تسجيل" ,
+  "login" : "دخول"
+}

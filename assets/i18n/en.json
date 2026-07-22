@@ -1,0 +1,12 @@
+{
+  "LoginHeader" : "Welcome Back !" ,
+  "LoginSubHeader" : "Sign in now and enjoy exclusive features!",
+  "don'tHaveAcc" : "Don't have an account?" ,
+  "signUp" : "Sign up" ,
+  "registerHeader" : "Create Your account" ,
+  "registerSubHeader" : "Sign up now and unlock exclusive access!" ,
+  "HaveAcc" : "Already have an account?" ,
+  "signIn" : "Sign in" ,
+  "register" : "Register" ,
+  "login" : "Login"
+}
